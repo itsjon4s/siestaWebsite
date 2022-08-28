@@ -25,7 +25,12 @@ const Navbar = () => {
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map(item => (
-                          <a key={item.name} href={item.href} className="hover:bg-[#3d3e51] px-2 py-3 rounded-md text-2xl font-semibold" aria-current={'page'}>
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className="hover:text-[#cdd6f4] hover:bg-[#181825] transition-all duration-200 delay-50 px-3 py-3 rounded-md text-2xl text-[#bac2de] font-semibold"
+                            aria-current={'page'}
+                          >
                             {item.name}
                           </a>
                         ))}
