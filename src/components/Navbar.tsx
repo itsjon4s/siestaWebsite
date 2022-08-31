@@ -5,9 +5,9 @@ import { Fragment } from 'react';
 
 const Navbar = () => {
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Invite', href: '/invite' },
-    { name: 'Support', href: '/discord' }
+    ['Home', '/'],
+    ['Invite', '/invite'],
+    ['Support', '/discord']
   ];
 
   return (
@@ -24,14 +24,14 @@ const Navbar = () => {
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
-                        {navigation.map(item => (
+                        {navigation.map(([name, href], index) => (
                           <a
-                            key={item.name}
-                            href={item.href}
+                            key={index}
+                            href={href}
                             className="hover:text-[#cdd6f4] hover:bg-[#181825] transition-all duration-200 delay-50 px-3 py-3 rounded-md text-2xl text-[#bac2de] font-semibold"
                             aria-current={'page'}
                           >
-                            {item.name}
+                            {name}
                           </a>
                         ))}
                       </div>
@@ -58,9 +58,9 @@ const Navbar = () => {
               >
                 <Disclosure.Panel className="md:hidden">
                   <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    {navigation.map(item => (
-                      <Disclosure.Button key={item.name} as="a" href={item.href} className="block px-3 py-2 rounded-md text-xl font-medium" aria-current="page">
-                        {item.name}
+                    {navigation.map(([name, href], index) => (
+                      <Disclosure.Button key={index} as="a" href={href} className="block px-3 py-2 rounded-md text-xl font-medium" aria-current="page">
+                        {name}
                       </Disclosure.Button>
                     ))}
                   </div>
